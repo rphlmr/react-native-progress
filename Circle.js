@@ -66,8 +66,7 @@ export class ProgressCircle extends Component {
   componentWillMount() {
     if (this.props.animated) {
       this.props.progress.addListener(event => {
-        this.progressValue = event.value;
-        if (this.props.showsText || this.progressValue === 1) {
+        if (this.props.showsText || event.value === 1) {
           this.forceUpdate();
         }
       });
